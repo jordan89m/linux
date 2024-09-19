@@ -359,7 +359,7 @@ static int gsx_gesture_init(struct goodix_ts_core *core_data,
 		goto exit_gesture_init;
 	}
 
-	for (i = 0; i < sizeof(gesture_attrs)/sizeof(gesture_attrs[0]); i++) {
+	for (i = 0; i < ARRAY_SIZE(gesture_attrs); i++) {
 		if (sysfs_create_file(&module->kobj,
 				&gesture_attrs[i].attr)) {
 			ts_err("Create sysfs attr file error");
@@ -708,6 +708,7 @@ static int __init goodix_gsx_gesture_init(void)
 {
 	/* initialize core_data->ts_dev->gesture_cmd*/
 	int result;
+
 	ts_info("gesture module init");
 	gsx_gesture = kzalloc(sizeof(struct gesture_module), GFP_KERNEL);
 	if (!gsx_gesture)
