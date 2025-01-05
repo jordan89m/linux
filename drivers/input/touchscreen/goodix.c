@@ -767,7 +767,7 @@ static int goodix_ts_probe(struct i2c_client *client,
 	if(0){
 		/* update device config */
 		ts->cfg_name = devm_kasprintf(&client->dev, GFP_KERNEL,
-					      "goodix_%d_cfg.bin", ts->id);
+					      "goodix_%d_cfg_f11.bin", ts->id);
 		if (!ts->cfg_name)
 			return -ENOMEM;
 
