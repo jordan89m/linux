@@ -1074,7 +1074,7 @@ if (IS_ERR(core_data->pinctrl)) {
 	/* suspend state */
 	core_data->pin_sta_suspend = pinctrl_lookup_state(core_data->pinctrl, PINCTRL_STATE_SUSPEND);
 	ret = PTR_ERR(core_data->pin_sta_suspend);
-if (ret) {	
+if (ret) {
 		dev_err(core_data->ts_dev->dev, "Unable to get suspend pin state\n");
 		ret = PTR_ERR(core_data->pin_sta_suspend);
 		return ret;
